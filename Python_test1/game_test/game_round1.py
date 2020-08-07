@@ -1,5 +1,4 @@
 # 回合制游戏----单轮
-
 def game():
     my_hp = 1000
     my_power = 200
@@ -18,4 +17,3 @@ def game():
 
 
 game()
-
