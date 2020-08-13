@@ -77,3 +77,4 @@ jinmao.sit('灰色')
 xiaobai = Cat('小白猫', 2)
 xiaobai.sit()
 
+
