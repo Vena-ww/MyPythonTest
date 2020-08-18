@@ -1,14 +1,18 @@
 # 计算器的代码块
 class Calculator:
 
+    # 加
     def add(self, a, b):
         return a + b
 
-    def sub(self, a, b):
+    # 减
+    def subtract(self, a, b):
         return a - b
 
-    def mul(self, a, b):
+    # 乘
+    def multiply(self, a, b):
         return a * b
 
-    def div(self, a, b):
+    # 除
+    def divide(self, a, b):
         return a / b
