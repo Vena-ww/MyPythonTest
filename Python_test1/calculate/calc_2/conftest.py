@@ -19,17 +19,23 @@ def get_calc():
     yield calc
     print('结束计算')
 
-
 # 数据驱动  从yaml文件读取测试数据
-def get_data():
-    # 获取测试数据的绝对路径
+# def get_data():
+#     # 获取测试数据的绝对路径
+#
+#     with open('calc.yml', encoding='utf-8') as f:
+#         mydatas = yaml.safe_load(f)
+#         # print(mydatas)
+#         # 加法的数据
+#         adddatas = mydatas['add']['datas']
+#         myids = mydatas['add']['myids']
+#
+#         # 除法的数据
+#         divdatas = mydatas['divide']['datas']
+#         divids = mydatas['divide']['myids']
+#     return [adddatas, myids], [divdatas, divids]
 
-    with open('calc.yml', encoding='utf-8') as f:
-        mydatas = yaml.safe_load(f)
-        adddatas = mydatas['add']['datas']
-        myids = mydatas['add']['myids']
-    return [adddatas, myids]
-
-@pytest.fixture(params=get_data()[0], ids=get_data()[1])
-def used_fixture(request):
-    return request.param
+# 获取get_data()方法的返回值，作为参数传入fixture方法
+# @pytest.fixture(params=get_data()[0], ids=get_data()[1])
+# def used_fixture(request):
+#     return request.param
