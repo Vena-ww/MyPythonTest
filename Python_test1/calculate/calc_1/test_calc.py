@@ -1,6 +1,6 @@
 import pytest
 import yaml
-from zuoye.test1.calculate import Calculator
+from MyPythonTest.Python_test1.calculate.calc_1.calculate import Calculator
 
 
 # 数据驱动  从yaml文件读取测试数据
