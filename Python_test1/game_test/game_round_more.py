@@ -18,4 +18,3 @@ def fight():
 
 
 fight()
-
