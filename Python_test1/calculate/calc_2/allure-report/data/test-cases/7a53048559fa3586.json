@@ -1,0 +1,128 @@
+{
+  "uid" : "7a53048559fa3586",
+  "name" : "test_divide[1除以0]",
+  "fullName" : "test_calc.TestCalc#test_divide",
+  "historyId" : "8fa4d32ed5e7e0aa5f87662d3cdd46eb",
+  "time" : {
+    "start" : 1597805825442,
+    "stop" : 1597805825443,
+    "duration" : 1
+  },
+  "status" : "broken",
+  "statusMessage" : "ZeroDivisionError: division by zero",
+  "statusTrace" : "self = <MyPythonTest.Python_test1.calculate.calc_2.test_calc.TestCalc object at 0x0000015E84E53D30>\nget_calc = <MyPythonTest.Python_test1.calculate.calc_2.calculate.Calculator object at 0x0000015E84DE88B0>, a = 1\nb = 0, expect = 0\n\n    @allure.story('除法计算')\n    @pytest.mark.last   # 执行顺序\n    @pytest.mark.parametrize('a, b, expect', gd.divide_data()[0], ids=gd.divide_data()[1])\n    def test_divide(self, get_calc, a, b, expect):\n        print(\"读取数据-计算两数相除\")\n>       result = round(get_calc.divide(a, b), 2)\n\ntest_calc.py:55: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <MyPythonTest.Python_test1.calculate.calc_2.calculate.Calculator object at 0x0000015E84DE88B0>, a = 1\nb = 0\n\n    def divide(self, a, b):\n>       return a / b\nE       ZeroDivisionError: division by zero\n\ncalculate.py:18: ZeroDivisionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "get_calc",
+    "time" : {
+      "start" : 1597805825320,
+      "stop" : 1597805825320,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "ZeroDivisionError: division by zero",
+    "statusTrace" : "self = <MyPythonTest.Python_test1.calculate.calc_2.test_calc.TestCalc object at 0x0000015E84E53D30>\nget_calc = <MyPythonTest.Python_test1.calculate.calc_2.calculate.Calculator object at 0x0000015E84DE88B0>, a = 1\nb = 0, expect = 0\n\n    @allure.story('除法计算')\n    @pytest.mark.last   # 执行顺序\n    @pytest.mark.parametrize('a, b, expect', gd.divide_data()[0], ids=gd.divide_data()[1])\n    def test_divide(self, get_calc, a, b, expect):\n        print(\"读取数据-计算两数相除\")\n>       result = round(get_calc.divide(a, b), 2)\n\ntest_calc.py:55: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <MyPythonTest.Python_test1.calculate.calc_2.calculate.Calculator object at 0x0000015E84DE88B0>, a = 1\nb = 0\n\n    def divide(self, a, b):\n>       return a / b\nE       ZeroDivisionError: division by zero\n\ncalculate.py:18: ZeroDivisionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "17915138032461fb",
+      "name" : "stdout",
+      "source" : "17915138032461fb.txt",
+      "type" : "text/plain",
+      "size" : 32
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ {
+    "name" : "get_calc::0",
+    "time" : {
+      "start" : 1597805825537,
+      "stop" : 1597805825537,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "计算器用例"
+  }, {
+    "name" : "story",
+    "value" : "除法计算"
+  }, {
+    "name" : "tag",
+    "value" : "last"
+  }, {
+    "name" : "tag",
+    "value" : "run(order=-1)"
+  }, {
+    "name" : "suite",
+    "value" : "test_calc"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCalc"
+  }, {
+    "name" : "host",
+    "value" : "Admin-w"
+  }, {
+    "name" : "thread",
+    "value" : "17272-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_calc"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "a",
+    "value" : "1"
+  }, {
+    "name" : "b",
+    "value" : "0"
+  }, {
+    "name" : "expect",
+    "value" : "0"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "last", "run(order=-1)" ]
+  },
+  "source" : "7a53048559fa3586.json",
+  "parameterValues" : [ "1", "0", "0" ]
+}
