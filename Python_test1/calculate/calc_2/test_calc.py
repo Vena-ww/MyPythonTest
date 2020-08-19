@@ -62,7 +62,6 @@ class TestCalc:
             assert expect == result
 
     # test_case_link = 'http://www.baidu.com'
-    #
     # @allure.link(test_case_link, '这是链接')  # 写入变量名称
     @allure.story('减法计算')
     @pytest.mark.run(order=2)  # 执行顺序
