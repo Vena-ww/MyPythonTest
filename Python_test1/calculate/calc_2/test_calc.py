@@ -51,9 +51,15 @@ class TestCalc:
     @pytest.mark.last   # 执行顺序
     @pytest.mark.parametrize('a, b, expect', gd.divide_data()[0], ids=gd.divide_data()[1])
     def test_divide(self, get_calc, a, b, expect):
-        print("读取数据-计算两数相除")
-        result = round(get_calc.divide(a, b), 2)
-        assert expect == result
+        if b == 0:
+            with pytest.raises(ZeroDivisionError) as exec_info:
+                get_calc.divide(a, b)
+            print("被除数不能为0")
+            assert exec_info.type == ZeroDivisionError
+        else:
+            result = round(get_calc.divide(a, b), 2)
+            print("读取数据-计算两数相除", f'result={result}')
+            assert expect == result
 
     # test_case_link = 'http://www.baidu.com'
     #
@@ -76,3 +82,8 @@ class TestCalc:
         print("读取数据-计算两数相乘")
         result = round(get_calc.multiply(a, b), 2)
         assert expect == result
+
+
+
+
+
