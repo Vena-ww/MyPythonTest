@@ -10,4 +10,4 @@
 ./Python_test1/calculate/calc_1
 
 ##第四次作业
-./Python_test1/calculate/calc_2
+./Python_test1/calculate/calc_2/test_calc.py
