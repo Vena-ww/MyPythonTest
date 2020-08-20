@@ -57,6 +57,3 @@ class TestDemo:
         # driver.find_element().text中的text是指定位到的元素的文本
         # 断言上传成功的文件是否正确
         assert 'upload_data.xlsx' == self.driver.find_element(By.ID, 'upload_file_name').text
-
-
-
