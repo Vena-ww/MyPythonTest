@@ -55,6 +55,7 @@ class TestDemo:
         # send_keys()上传文件，文件路径中的\会引起转义的问题，所有前面加r保持原始值，或替换为\\或/
         self.driver.find_element(By.ID, 'js_upload_file_input').send_keys(r'D:\Download\upload_data.xlsx')
         # driver.find_element().text中的text是指定位到的元素的文本
+        # 断言上传成功的文件是否正确
         assert 'upload_data.xlsx' == self.driver.find_element(By.ID, 'upload_file_name').text
 
 
