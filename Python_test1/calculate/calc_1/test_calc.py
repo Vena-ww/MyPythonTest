@@ -59,4 +59,3 @@ class TestCalc:
         print('测试相除')
         result = round(self.calc.div(a, b), 2)
         assert expect == result
-
