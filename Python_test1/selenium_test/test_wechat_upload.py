@@ -1,9 +1,9 @@
-
 import shelve
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+
 
 class TestDemo:
     def setup(self):
@@ -20,7 +20,7 @@ class TestDemo:
         self.driver.implicitly_wait(5)  # 隐式等待，全局范围
 
     def teardown(self):
-        self.driver.quit() # 回收driver，运行完毕后关闭窗口
+        self.driver.quit()  # 回收driver，运行完毕后关闭窗口
 
     def test_case(self):
         # shelve 小型的数据库，对象持久化保存(有时效)
@@ -37,7 +37,7 @@ class TestDemo:
 
         # 以下，从已经生成的文件中读取cookies，然后登录页面
         db = shelve.open('cookieDB/login_cookies')
-        cookies = db['cookie']   # 从cookieDB目录下的login_cookies文件中读取cookies
+        cookies = db['cookie']  # 从cookieDB目录下的login_cookies文件中读取cookies
         db.close()
         # 打开要传入cookies的页面
         self.driver.get('https://work.weixin.qq.com/wework_admin/frame#index')
