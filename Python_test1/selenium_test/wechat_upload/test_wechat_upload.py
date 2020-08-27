@@ -36,8 +36,8 @@ class TestDemo:
         """
 
         # 以下，从已经生成的文件中读取cookies，然后登录页面
-        db = shelve.open('cookieDB/login_cookies')
-        cookies = db['cookie']  # 从cookieDB目录下的login_cookies文件中读取cookies
+        db = shelve.open("cookieDB/login_cookies")
+        cookies = db["cookie"]   # 从cookieDB目录下的login_cookies文件中读取cookies
         db.close()
         # 打开要传入cookies的页面
         self.driver.get('https://work.weixin.qq.com/wework_admin/frame#index')
