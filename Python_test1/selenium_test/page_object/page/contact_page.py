@@ -35,3 +35,15 @@ class ContactPage(BasePage):
             list_depart.append(name.text)
         print(list_depart)
         return list_depart
+
+    def goto_add_subdivision(self):
+        from MyPythonTest_Private.PythonTest_1.page_object2.new_department_page import NewDepartmentPage
+        sleep(1)
+        self.find(By.CSS_SELECTOR, ".js_party_edit .js_add_sub_party").click()
+        return NewDepartmentPage(self._driver)
+
+    def get_subdivision(self):
+        # 获取最后的一个部门名称，即是最新添加的
+        sub_name = self.find(By.CSS_SELECTOR, "[class='jstree-children']>.jstree-node:last-child").text
+        # print(sub_name)
+        return sub_name

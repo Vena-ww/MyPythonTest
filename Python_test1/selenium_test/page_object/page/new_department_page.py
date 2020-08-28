@@ -16,4 +16,10 @@ class NewDepartmentPage(BasePage):
         self.find(By.CSS_SELECTOR, "[d_ck='submit']").click()
         sleep(1)
         return ContactPage(self._driver)
+
     # 添加子部门
+    def add_subdivision(self):
+        self.find(By.CSS_SELECTOR, ".member_tag_dialog_inputDlg [name='name']").send_keys("子部门1")
+        self.find(By.CSS_SELECTOR, ".ww_dialog_foot .ww_btn_Blue").click()
+        sleep(1)
+        return ContactPage(self._driver)
