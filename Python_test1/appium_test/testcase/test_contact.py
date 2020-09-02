@@ -5,7 +5,7 @@ from MyPythonTest_Private.PythonTest_1.appium.page.app import App
 
 
 def get_contacts():
-    with open("./../appium_test/test_wechat/datas/contacts.yaml", encoding='utf-8') as f:
+    with open("./../appium_test/test_appium/datas/contacts.yaml", encoding='utf-8') as f:
         datas = yaml.safe_load(f)
     return datas
 
@@ -33,6 +33,7 @@ class TestWechat:
         toast_message = edit_messages.get_toast()
         assert toast_message == "添加成功"
 
+    # 删除联系人
     def test_del_contact(self):
         #     首页     通讯录页面    点击搜索按钮后的页面
         last_text = self.main.goto_addresslist().search_menu().serach_result().user_set().del_user().last_result()
