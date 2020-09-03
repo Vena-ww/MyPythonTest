@@ -1,14 +1,16 @@
+import os
+
 import pytest
 import yaml
-
 from MyPythonTest_Private.PythonTest_1.appium.page.app import App
 
 
 def get_contacts():
-    with open("./../appium_test/test_appium/datas/contacts.yaml", encoding='utf-8') as f:
+    path = os.path.dirname(__file__)
+    data_path = os.path.dirname(path) + "/datas/contacts.yaml"
+    with open(data_path, encoding='utf-8') as f:
         datas = yaml.safe_load(f)
     return datas
-
 
 class TestWechat:
     def setup(self):

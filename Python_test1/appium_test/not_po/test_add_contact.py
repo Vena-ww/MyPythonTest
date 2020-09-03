@@ -7,7 +7,7 @@ from appium.webdriver.common.mobileby import MobileBy
 
 
 def get_contacts():
-    with open("./datas/contacts.yaml", encoding='utf-8') as f:
+    with open("../datas/contacts.yaml", encoding='utf-8') as f:
         datas = yaml.safe_load(f)
     return datas
 

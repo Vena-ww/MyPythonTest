@@ -6,7 +6,7 @@ from MyPythonTest_Private.PythonTest_1.appium.page.usersetpage import UserSetPag
 
 
 class SearchResult(BasePage):
-    name = "沃尔"
+    name = "佩吉"
     name_ele = (MobileBy.ID, "com.tencent.wework:id/g75")
     ele_list1 = (MobileBy.XPATH, f"//*[@text='{name}']")
     ele_member = (MobileBy.XPATH, f"//*[@text='{name}']")
