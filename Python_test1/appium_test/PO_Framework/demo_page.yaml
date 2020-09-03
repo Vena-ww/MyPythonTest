@@ -1,0 +1,17 @@
+login:
+  - find: xxx
+  - click: []
+  - find: xxx
+  - send_keys: xxx
+
+forget:
+  - find: xxx
+  - click: []
+
+search:
+  - id: home_search
+  - action: click    # 也可以表示为 click: []
+  - id: search_input_text
+  - send_keys: alibaba
+  - id: name
+  - action: click
