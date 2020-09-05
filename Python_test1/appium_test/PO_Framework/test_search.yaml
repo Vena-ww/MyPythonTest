@@ -1,0 +1,5 @@
+params:
+# 列表形式：
+  - keyword: alibaba
+  - keyword: baidu
+  - keyword: jd
