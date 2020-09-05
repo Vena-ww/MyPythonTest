@@ -15,7 +15,7 @@ class DemoPage(BasePage):
 
     def search(self, keyword):
         # self.find(self._search_button).click()
-        self.po_run('search', keyword=keyword)
+        self.po_run('search', keyword=keyword)   # keyword=keyword 代表传入的参数是字典形式
         return self
 
     def back_cancle(self):

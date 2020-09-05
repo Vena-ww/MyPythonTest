@@ -60,7 +60,7 @@ class BasePage:
                         elif key == 'send_keys':
                             send_text = str(step[key])
                             for k, v in kwargs.items():   # kwargs.items()以列表返回可遍历的(键, 值) 元组数组
-                                send_text = send_text.replace('${' + k + '}', v)
+                                send_text = send_text.replace('{%s}' % k, v)
                             self.send_key(send_text)
                         # todo:可以追加更多的关键词
                         else:

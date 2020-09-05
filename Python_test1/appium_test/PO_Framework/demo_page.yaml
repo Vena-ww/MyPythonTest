@@ -12,7 +12,7 @@ search:
   - id: home_search
   - action: click    # 也可以表示为 click: []
   - id: search_input_text
-  - send_keys: ${keyword}   # 从其他文件传入
+  - send_keys: '{keyword}'   # 从其他文件传入
   - id: name
   - action: click
 
