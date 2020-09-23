@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 class BasePage:
     _driver: WebDriver = None
-    _current_element:WebElement = None
+    _current_element: WebElement = None
 
     def start(self):
         caps = {
@@ -38,9 +38,13 @@ class BasePage:
         self._current_element.send_keys(text)
         return self
 
-    def po_run(self, po_method):
+    def back(self):
+        self._driver.back()
+        return self
+
+    def po_run(self, po_method, **kwargs):  # **kwargs 将关键字参数kwarg以字典形式传入
         # 读取yaml文件
-        with open('demo_page.yaml') as f:
+        with open('demo_page.yaml', encoding='utf-8') as f:
             yaml_data = yaml.safe_load(f)
             # 遍历yaml文件查找一组字典 search
             for step in yaml_data[po_method]:
@@ -50,11 +54,14 @@ class BasePage:
                     for key in step.keys():
                         if key == 'id':
                             locator = (By.ID, step[key])
-                            self.find(locator)   # find()方法定义时的参数是元组，所以要传入元组类型的数据
-                        elif key == 'click':
+                            self.find(locator)  # find()方法定义时的参数是元组，所以要传入元组类型的数据
+                        elif key == 'action':
                             self.click()
                         elif key == 'send_keys':
-                            self.send_key(step[key])
+                            send_text = str(step[key])
+                            for k, v in kwargs.items():   # kwargs.items()以列表返回可遍历的(键, 值) 元组数组
+                                send_text = send_text.replace('{%s}' % k, v)
+                            self.send_key(send_text)
                         # todo:可以追加更多的关键词
                         else:
                             logging.error(f"错误：{step}")

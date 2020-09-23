@@ -13,8 +13,11 @@ class DemoPage(BasePage):
     def forget_password(self):
         pass
 
-    def search(self):
+    def search(self, keyword):
         # self.find(self._search_button).click()
-        self.po_run('search')
+        self.po_run('search', keyword=keyword)   # keyword=keyword 代表传入的参数是字典形式
         return self
 
+    def back_cancle(self):
+        self.po_run('back')
+        return self

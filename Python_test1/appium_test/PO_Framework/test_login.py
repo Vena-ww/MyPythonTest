@@ -1,14 +1,25 @@
+import logging
+
 import pytest
 
 from MyPythonTest.Python_test1.appium_test.PO_Framework.demo_page import DemoPage
+from MyPythonTest.Python_test1.appium_test.PO_Framework.utils import Utils
 
 
 class TestLogin:
+    data = Utils.load_file('test_search.yaml')
+
     def setup_class(self):
         self.demo = DemoPage()
         self.demo.start()
 
+    def setup(self):
+        pass
+
     def teardown(self):
+        self.demo.back_cancle()
+
+    def teardown_class(self):
         self.demo.stop()
 
     # todo:测试数据的数据驱动（存放在yaml文件）
@@ -26,6 +37,7 @@ class TestLogin:
     #     # 'baidu',
     #     # 'jd'
     # ])
-    def test_search(self):
-        self.demo.search()
-
+    @pytest.mark.parametrize(data['keys'], data['values'])
+    def test_search(self, keyword):
+        # logging.info(keyword)
+        self.demo.search(keyword)
