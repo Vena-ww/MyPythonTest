@@ -27,7 +27,7 @@ class AddressPage(BaseApi):
         return self.send_api(data)
 
     def add_member(self):
-        url = f"https://qyapi.weixin.qq.com/cgi-bin/user/create?access_token={self.token}"
+        # url = f"https://qyapi.weixin.qq.com/cgi-bin/user/create?access_token={self.token}"
         # 接口中必须传入的参数
         data = {
             "method": "post",
